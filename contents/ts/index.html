@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <!-- Bootstrap core CSS -->
     <link href="../../app/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../jumbotron.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -21,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">Top Level</a>
+            <a class="navbar-brand" href="/index.html">iManabu's Dev World</a>
         </div>
         <!--<div id="navbar" class="navbar-collapse collapse">-->
         <!--<form class="navbar-form navbar-right">-->
@@ -36,5 +37,36 @@
         <!--</div>&lt;!&ndash;/.navbar-collapse &ndash;&gt;-->
     </div>
 </nav>
+<div class="container">
+    <div class="row">
+        <h1>Installation and Initial Configurations</h1>
+        <h2>What and Why I Recommend Those</h2>
+        <ul>
+            <li>Either the WebStorm or the Visual Studio. Microsoft Code is nice but Intellisense
+                especially the path detection is not quite there. WebStorm can even read the HTML file for Angular code
+            so it is the best of all.</li>
+            <li>Be sure to use the latest version of the compiler (as of August 2015 it was 1.5.3) </li>
+        </ul>
+        <h2>Installation of TypeScript</h2>
+        <ol>
+            <li>Install Node.js This installs also npm which we will need for subsequent configurations. </li>
+            <li><code>sudo npm install -g tsc</code> Installs Typescript compiler. If you are on windows omit sudo but you
+            have to be an admin user.</li>
+            <li><code>sudo npm install -g tsd</code> Installs the Typescript definition manager.
+            This is needed to import the "intellisense" definitions for Visual Studio and WebStorm.</li>
+            <li>Install bower by <code>npm install -g bower</code> Most packages use this to install js and css</li>
+        </ol>
+        <h2>Initial Setup</h2>
+        <ul>
+            <li>Start with the plain Angular Seed project. It contains handy package.json</li>
+            <li>At the root of the seed project do <code>npm install</code> This will install most of what you will need</li>
+            <li>If you are using bootstrap either do <code>bower install bootstrap</code> or edit bower.json and add
+            <code>"bootstrap": "~3.3.5"</code></li>
+            <li>Now the most of the stuff is set up, bring in the type def files by<br/>
+            <code>tsd install "angular*"</code> Granted this will install a whole lot of stuff you may not need
+            you could save a lot of time not needing to cherry-pick each definition.</li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
