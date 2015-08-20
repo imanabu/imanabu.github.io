@@ -65,7 +65,7 @@
             <li>If you are using bootstrap either do <code>bower install bootstrap</code> or edit bower.json and add
             <code>"bootstrap": "~3.3.5"</code></li>
             <li>If you are only developing in the app directory <code>cd app</code>, otherwise I would create the
-            typings files at the root by not cd'ing to app.</li>
+            typings files at the root by not cd to app.</li>
             <li>Now the most of the stuff is set up, bring in the type def files by<br/>
             <code>tsd install "angular*"</code> Granted this will install a whole lot of stuff you may not need
             you could save a lot of time not needing to cherry-pick each definition.</li>
@@ -79,7 +79,24 @@
         old JavaScript code as well.</P>
         <P>For this to work smoothly in IDE, you will need to make sure that the typings directory especially the
             typings/angularjs/angular.d.ts reference is properly made in source code.</P>
-        <p>To be continued...</p>
+        <h2>The Key to Assigning Module Names</h2>
+        <p>Here is a concrete example how this is accomplished.</p>
+        <p><code>angular.module("Products", []).controller("Products.Controller", Products.Controller);</code></p>
+        In this example, I have essentially created a module called "Products" then added to it the controller
+        name of "Products.Controller" and attached the Products (a TypeScript Module), and a class of Controller.
+        <p>
+            This is a stand-alone function (to a static call) and you could insert this statement inside the constructor of a class OR
+            somewhere completely external. For example after the class definition {} but before the module's closing }
+            bracket.
+        </p>
+        <p>
+            A typical error made by the Angular developers for module declaration (even without TypeScript) is that the module call can
+            serve two purposes, one is to define it and another is to retrieve it. The only difference
+            between the two is the string array parameter
+            after the module name. If the string array is not provided, then it's a signal to retrieve the
+            named module. If the string array is the <b>required</b> items, and this can be an empty string but it
+            cannot be omitted to initiate a module.
+        </p>
 
     </div>
 </div>
