@@ -48,6 +48,8 @@
             <li>Be sure to use the latest version of the compiler (as of August 2015 it was 1.5.3) </li>
         </ul>
         <h2>Installation of TypeScript</h2>
+        The following information is actually documented well. Nevertheless, I did get "stuck" with these issues
+        when I was trying to make myself familiar with it. So they might also help you.
         <ol>
             <li>Install Node.js This installs also npm which we will need for subsequent configurations. </li>
             <li><code>sudo npm install -g tsc</code> Installs Typescript compiler. If you are on windows omit sudo but you
@@ -62,10 +64,23 @@
             <li>At the root of the seed project do <code>npm install</code> This will install most of what you will need</li>
             <li>If you are using bootstrap either do <code>bower install bootstrap</code> or edit bower.json and add
             <code>"bootstrap": "~3.3.5"</code></li>
+            <li>If you are only developing in the app directory <code>cd app</code>, otherwise I would create the
+            typings files at the root by not cd'ing to app.</li>
             <li>Now the most of the stuff is set up, bring in the type def files by<br/>
             <code>tsd install "angular*"</code> Granted this will install a whole lot of stuff you may not need
             you could save a lot of time not needing to cherry-pick each definition.</li>
+            <li>Now that the files are in place you can include the reference to the 'd' files by doing things like
+            <code>/// &lt;reference path="../scripts/typings/angularjs/angular.d.ts" /&gt; at the start
+            of your ts source code.</code></li>
         </ul>
+        <h1>The Module Name Mystery Solved</h1>
+        <P>I've looked at several Angular/TS examples, and a great number of them to not assign the angular module name.
+        So it took me some efforts to find out how to do this. Do remember though, your TS code can intermix the plain
+        old JavaScript code as well.</P>
+        <P>For this to work smoothly in IDE, you will need to make sure that the typings directory especially the
+            typings/angularjs/angular.d.ts reference is properly made in source code.</P>
+        <p>To be continued...</p>
+
     </div>
 </div>
 </body>
