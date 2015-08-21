@@ -88,7 +88,16 @@
         </ul>
         <h2>Yeoman TypeScript Generator - Code Scaffolding</h2>
         Look at <a href="https://www.npmjs.com/package/generator-angular-typescript#controller" target="_blank">
-            Yeoman Angular Genrator</a> and you can scaffold most of what you will need to build an app.
+        <P>    Yeoman Angular Generator</a> and you can scaffold most of what you will need to build an app.
+        </P>
+        <p>There are something not very clear in those documents, so I would like to explain now.
+        <ul>
+	        <li>You do have to have ruby because it uses the compass web server. You also need to install
+	        the compass most likely by <code>sudo gem install compass</code></li>
+	        <li>You do also have to use <code>npm install generator-angular-typescript</code>. The documentation is wrong.</li>
+	        <li>The yo command are not correct. You do have to add --typescript (note -- not a -) <code>yo angular-typescript --typescript</code></li>
+	        
+        </ul>
         <h1>The Module Name Mystery Solved</h1>
         <P>I've looked at several Angular/TS examples, and a great number of them to not assign the angular module name.
         So it took me some efforts to find out how to do this. Do remember though, your TS code can intermix the plain
