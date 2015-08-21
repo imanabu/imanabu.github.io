@@ -100,8 +100,11 @@
 	        the compass most likely by <code>sudo gem install compass</code></li>
 	        <li>You do also have to use <code>npm install generator-angular-typescript</code>. The documentation is wrong.</li>
 	        <li>The yo command are not correct. You do have to add --typescript (note -- not a -) <code>yo angular-typescript --typescript</code></li>
-	        
         </ul>
+        <p>By the way, if you are going through the Yeoman mytodo tutorial, and why the duplicate list items do not work in the example, then the answer
+	        is that because it is using the item in the list as the key. There is one way to get around this by specifying to track the list by 
+	        another key. In this case the $index. So make the following change <code>ng-repeat="todo in todos track by $index</code> and 
+	        it not only works but you can insert as many duplicates as you want.</p>
         <h1>The Module Name Mystery Solved</h1>
         <P>I've looked at several Angular/TS examples, and a great number of them to not assign the angular module name.
         So it took me some efforts to find out how to do this. Do remember though, your TS code can intermix the plain
