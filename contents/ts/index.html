@@ -91,20 +91,22 @@
             of your ts source code.</code></li>
         </ul>
         <h2>Yeoman TypeScript Generator - Code Scaffolding</h2>
-        Look at <a href="https://www.npmjs.com/package/generator-angular-typescript#controller" target="_blank">
-        <P>    Yeoman Angular Generator</a> and you can scaffold most of what you will need to build an app.
-        </P>
-        <p>There are something not very clear in those documents, so I would like to explain now.
+        <p>Look at <a href="https://www.npmjs.com/package/generator-angular-typescript#controller" target="_blank">
+        Yeoman Angular Generator</a> and you can scaffold most of what you will need to build an app.</p>
+       
+        <p>There are some issues with those documents, so I would like to explain how I got around the issues now.
         <ul>
 	        <li>You do have to have ruby because it uses the compass web server. You also need to install
 	        the compass most likely by <code>sudo gem install compass</code></li>
 	        <li>You do also have to use <code>npm install generator-angular-typescript</code>. The documentation is wrong.</li>
 	        <li>The yo command are not correct. You do have to add --typescript (note -- not a -) <code>yo angular-typescript --typescript</code></li>
         </ul>
-        <p>By the way, if you are going through the Yeoman mytodo tutorial, and why the duplicate list items do not work in the example, then the answer
-	        is that because it is using the item in the list as the key. There is one way to get around this by specifying to track the list by 
-	        another key. In this case the $index. So make the following change <code>ng-repeat="todo in todos track by $index</code> and 
-	        it not only works but you can insert as many duplicates as you want.</p>
+        <p>By the way, if you are going through the Yeoman mytodo tutorial, and still wondering why the duplicate list items do not work in the example, then the answer
+	        is that because it is using the item's string in the $todo list as the key. There is one way to get around this by specifying to track the list by 
+	        another key. The <code>ng-repeat</code> directive documents in <a href="https://docs.angularjs.org/error/ngRepeat/dupes" target=_blank>Angular.js</a> site tells you this. 
+	        In this case the $index is the key field to force. So make the following change<p><code>ng-repeat="todo in todos track by $index</code></p> and 
+	        it not only works right but you can also insert as many duplicates as you want, which is the behavior you would want in a ToDo list other than
+	        preventing empty item from being added etc.</p>
         <h1>The Module Name Mystery Solved</h1>
         <P>I've looked at several Angular/TS examples, and a great number of them to not assign the angular module name.
         So it took me some efforts to find out how to do this. Do remember though, your TS code can intermix the plain
