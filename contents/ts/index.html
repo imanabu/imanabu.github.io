@@ -37,13 +37,25 @@
         <!--</div>&lt;!&ndash;/.navbar-collapse &ndash;&gt;-->
     </div>
 </nav>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+	        <div class="col-md-2">
+				      
+	        </div>
+		    <div class="col-md-7">
+				<h1>Typescript and AngularJS
+	        </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <h1>Why Bother with TypeScript?</h1>
         <ul>
-            <li>JavaScript is difficult to learn and difficult to read. If you have been doing it for a while
-            then that's one story. If you have not been coding it, then there are so many hidden tricks you
-            need to know.</li>
+            <li>For the people who have been working mostly in typed OO language world, JavaScript and its environment is very confusing.
+            We love the world where there are classes, publics, privates, interfaces, and strict type checking, and of course
+            because of that, our IDEs are much predictable to use.</li>
             <li>ECMAScript 6 is great, it's quite similar to TypeScript too. But, it will be many years before
             the script will be supported widely. Especially in slow moving places like hospital enterprises.</li>
             <li>We can write to ES6 and translate it to ES5. Or do the same with TypeScript today. And in case
@@ -95,6 +107,15 @@
             <code>/// &lt;reference path="../scripts/typings/angularjs/angular.d.ts" /&gt; at the start
             of your ts source code.</code></li>
         </ul>
+        <h2>The Best Angular/Typescript Example</h2>
+        <p>
+	        So far, I have found that the <a href="http://todomvc.com/examples/typescript-angular/#/" target="_blank">todo MVC examples</a> web site provides a more complete example of how Typescript can be
+	        integrated with the AngularJS framework. I plan to write a more complete step-by-step study
+	        of the examples given. Also, this site contains the same implementation on various other
+	        frameworks including Angular2, Knockout etc. It is a great way to compare the strength of each  
+	        framework.
+        </p>
+        <p>I have <a href="https://docs.google.com/document/d/1DaSv9oVzsmwLEGQAgpBAGW9ZxH5yQTX4RVQdsW7tUro/edit?usp=sharing" target=_blank>written up some additional observations</a> on the code, especially where I got stuck or got confused.</p>
         <h2>Yeoman TypeScript Generator - Code Scaffolding</h2>
         <p>Look at <a href="https://www.npmjs.com/package/generator-angular-typescript#controller" target="_blank">
         Yeoman Angular Generator</a> and you can scaffold most of what you will need to build an app.</p>
@@ -105,39 +126,23 @@
 	        the compass most likely by <code>sudo gem install compass</code></li>
 	        <li>You do also have to use <code>npm install generator-angular-typescript</code>. The documentation is wrong.</li>
 	        <li>The yo command are not correct. You do have to add --typescript (note -- not a -) <code>yo angular-typescript --typescript</code></li>
+	        <li>If you do a <code>grunt</code> to build the dist, then you might run into issues where you could get an error message
+	        similar to <code>/Users/manabutokunaga/mytodo/node_modules/grunt-usemin/lib/config/uglifyjs</code>. If you do get
+	        this message, edit the Gruntfile.js and look for flow: and several lines under it you find <code>js: ['concat', 'ugilfyjs']
+	        </code>. Depending on which version or the generator you downloaded (it is about to be fixed to uglifyjs) you 
+	        may need to revert 'uglifyjs' to just 'uglifyjs'. When they update it, it will break again and at that point
+	        you will need to fix it back to uglifyjs. Just look in the directory where it says the missing and you know
+	        which one to go for.
+	       
         </ul>
-        <p>By the way, if you are going through the Yeoman mytodo tutorial, and still wondering why the duplicate list items do not work in the example, then the answer
+        <h2>The Answer to MyTodo Homework Question</h2>
+        <p>If you are going through the Yeoman mytodo tutorial, and still wondering why the duplicate list items do not work in the example, then the answer
 	        is that because it is using the item's string in the $todo list as the key. There is one way to get around this by specifying to track the list by 
 	        another key. The <code>ng-repeat</code> directive documents in <a href="https://docs.angularjs.org/error/ngRepeat/dupes" target=_blank>Angular.js</a> site tells you this. 
 	        In this case the $index is the key field to force. So make the following change<p><code>ng-repeat="todo in todos track by $index</code></p> and 
 	        it not only works right but you can also insert as many duplicates as you want, which is the behavior you would want in a ToDo list other than
 	        preventing empty item from being added etc.</p>
-        <h1>The Module Name Mystery Solved</h1>
-        <P>I've looked at several Angular/TS examples, and a great number of them to not assign the angular module name.
-        So it took me some efforts to find out how to do this. Do remember though, your TS code can intermix the plain
-        old JavaScript code as well.</P>
-        <P>For this to work smoothly in IDE, you will need to make sure that the typings directory especially the
-            typings/angularjs/angular.d.ts reference is properly made in source code.</P>
-        <h2>The Key to Assigning Module Names</h2>
-        <p>Here is a concrete example how this is accomplished.</p>
-        <p><code>angular.module("Products", []).controller("Products.Controller", Products.Controller);</code></p>
-        In this example, I have essentially created a module called "Products" then added to it the controller
-        name of "Products.Controller" and attached the Products (a TypeScript Module), and a class of Controller.
-        <p>
-            This is a stand-alone function (to a static call) and you could insert this statement inside the constructor of a class OR
-            somewhere completely external. For example after the class definition {} but before the module's closing }
-            bracket.
-        </p>
-        <p>
-            A typical error made by the Angular developers for module declaration (even without TypeScript) is that the module call can
-            serve two purposes, one is to define it and another is to retrieve it. The only difference
-            between the two is the string array parameter
-            after the module name. If the string array is not provided, then it's a signal to retrieve the
-            named module. If the string array is the <b>required</b> items, and this can be an empty string but it
-            cannot be omitted to initiate a module.
-        </p>
-
-    </div>
+     </div>
     <footer>
         <p>&copy; Manabu Tokunaga 2015 <a
                 href="https://docs.google.com/forms/d/1cR8cKDf6Q7Zs43AbiyUERaqA-YIde-StQwEtAd8Q2S0/viewform">Contact
