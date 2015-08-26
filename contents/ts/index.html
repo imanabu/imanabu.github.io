@@ -16,7 +16,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -44,7 +44,7 @@
 				      
 	        </div>
 		    <div class="col-md-7">
-				<h1>Typescript and AngularJS
+				<h1>Typescript and AngularJS</h1>
 	        </div>
         </div>
     </div>
@@ -125,7 +125,7 @@
         <p>I have <a href="https://docs.google.com/document/d/1DaSv9oVzsmwLEGQAgpBAGW9ZxH5yQTX4RVQdsW7tUro/edit?usp=sharing" target=_blank>written up some additional observations</a> on the code, especially where I got stuck or got confused.</p>
         <h3>Kode Yak Blog</h3>
         <p>
-	        The <a href="https://kodeyak.wordpress.com/2014/02/12/angularjs-via-typescript-controllers">Kode Yak blog</a> has 5 different blog posts in a series describing how to write an AngularJS app 
+	        The <a href="https://kodeyak.wordpress.com/2014/02/12/angularjs-via-typescript-controllers" target="_blank">Kode Yak blog</a> has 5 different blog posts in a series describing how to write an AngularJS app 
 	        using Typescript. This was helpful in understanding how to set up Modules and Services 
 	        in TS and also it contains a section of HTTP Service and how to deal with Promise.
         </p>
@@ -157,7 +157,7 @@
         <p>If you are going through the Yeoman mytodo tutorial, and still wondering why the duplicate list items do not work in the example, then the answer
 	        is that because it is using the item's string in the $todo list as the key. There is one way to get around this by specifying to track the list by 
 	        another key. The <code>ng-repeat</code> directive documents in <a href="https://docs.angularjs.org/error/ngRepeat/dupes" target=_blank>Angular.js</a> site tells you this. 
-	        In this case the $index is the key field to force. So make the following change<p><code>ng-repeat="todo in todos track by $index</code></p> and 
+	        In this case the $index is the key field to force. So make the following change<p><code>ng-repeat="todo in todos track by $index</code> and 
 	        it not only works right but you can also insert as many duplicates as you want, which is the behavior you would want in a ToDo list other than
 	        preventing empty item from being added etc.</p>
      </div>
