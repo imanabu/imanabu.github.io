@@ -91,6 +91,12 @@
             <li><code>sudo npm install -g tsd</code> Installs the Typescript definition manager.
             This is needed to import the "intellisense" definitions for Visual Studio and WebStorm.</li>
             <li>Install bower by <code>npm install -g bower</code> Most packages use this to install js and css</li>
+            <li>Nobody knows what the Gulp is except the people who use Gulp. 
+            The web site is like a Unix man page. It does not tell you what it is but it does tell you what it does. 
+            Perhaps, it tries to replace Grunt. I am sure you would be forced to use Gulp some day. Do note that if
+            you are using Gulp, it seems to require the installation both on local npm repository
+            on your project as well as on the global repository on your system, so you need to run 
+            <code>npm install gulp</code> without the -g option once you create a project.
         </ol>
         <h2>Initial Setup</h2>
         <ul>
@@ -108,6 +114,7 @@
             of your ts source code.</code></li>
         </ul>
         <h2>The Best Angular/Typescript Example</h2>
+        <h3>todomvc.com The Prototypical TODO App sample in All Different Frameworks</h3>
         <p>
 	        So far, I have found that the <a href="http://todomvc.com/examples/typescript-angular/#/" target="_blank">todo MVC examples</a> web site provides a more complete example of how Typescript can be
 	        integrated with the AngularJS framework. I plan to write a more complete step-by-step study
@@ -116,6 +123,17 @@
 	        framework.
         </p>
         <p>I have <a href="https://docs.google.com/document/d/1DaSv9oVzsmwLEGQAgpBAGW9ZxH5yQTX4RVQdsW7tUro/edit?usp=sharing" target=_blank>written up some additional observations</a> on the code, especially where I got stuck or got confused.</p>
+        <h3>Kode Yak Blog</h3>
+        <p>
+	        The <a href="https://kodeyak.wordpress.com/2014/02/12/angularjs-via-typescript-controllers">Kode Yak blog</a> has 5 different blog posts in a series describing how to write an AngularJS app 
+	        using Typescript. This was helpful in understanding how to set up Modules and Services 
+	        in TS and also it contains a section of HTTP Service and how to deal with Promise.
+        </p>
+        <p>
+	        If you have not done much of Angular programming at all, the HTTP I/O is done asynchronously. Obviously it 
+	        should, otherwise, you cannot gain the user experience you intended to get. But, it will throw
+	        you off since, for example, in a $http callback, you might not be able to interact with the $scope.
+        </p>
         <h2>Yeoman TypeScript Generator - Code Scaffolding</h2>
         <p>Look at <a href="https://www.npmjs.com/package/generator-angular-typescript#controller" target="_blank">
         Yeoman Angular Generator</a> and you can scaffold most of what you will need to build an app.</p>
