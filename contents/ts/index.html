@@ -113,6 +113,22 @@
             <code>/// &lt;reference path="../scripts/typings/angularjs/angular.d.ts" /&gt; at the start
             of your ts source code.</code></li>
         </ul>
+        <h2>Clearing Initial Confusions Especially If You Are From the C# or Java World</h2>
+        <p>
+	        <ul>
+		        <li>Consider the "module" keyword as the namespace in C#. This has nothing related to the Angular module
+			        names, which is provided as a string parameter when constructing the app.</li>
+			    <li>Within the class the user of "this." is required to refer to anything within the class.</li>
+			    <li>There seemingly a lack of "new" in most parts of the Angular code. This is because 
+			    most things are injected into the Angular framework then the label to the injected item is assigned to them
+			    as a string. If you get the idea of this, then you will feel much better! </li>
+			    <li>You will be calling a class member from your HTML code. A typical approach to do this is to
+			    assign the instance of class (injected into the app of course) into $scope. Furthermore, in order
+			    to do this, you'd first define an Interface class which holds the Model of the data the $scope can have
+			    and within that you'd assign the "pointer" to the class instance. You see this done in the todomvc example
+			    code.</li> 
+	        </ul>
+        </p>
         <h2>The Best Angular/Typescript Example</h2>
         <h3>todomvc.com The Prototypical TODO App sample in All Different Frameworks</h3>
         <p>
